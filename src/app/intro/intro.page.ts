@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-intro',
@@ -49,12 +50,13 @@ export class IntroPage {
 
   constructor(
     private router: Router,
-    private storage: Storage
+    private storage: Storage,
+    private navCtrl: NavController
     ){}
 
   goToHome(){
     console.log("go to home");
-    this.router.navigateByUrl('/home');
+    this.navCtrl.navigateBack('/home');
   }
   
   ionViewWillEnter() {

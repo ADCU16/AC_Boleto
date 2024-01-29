@@ -15,8 +15,10 @@ export class IntroGuard implements CanActivate {
   async canActivate() {
     const pasePorIntro = await this.storage.get('TheBox');
     if (pasePorIntro) {
+      console.log('Pase por intro');
       return true;
     } else {
+      console.log('No pase por intro');
       this.router.navigateByUrl('/intro');
       return false;
     }

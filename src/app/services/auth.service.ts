@@ -18,4 +18,16 @@ export class AuthService {
       }
     });
   }
+  
+  registerUser(userData : any)
+  {
+    return new Promise((accept, reject) => {
+      if(userData.password != userData.confirm_password){
+        reject('contraseñas no coinciden');
+      }
+      else{
+        accept('Registro correcto');
+      }
+    });
+  }
 }

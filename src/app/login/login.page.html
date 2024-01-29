@@ -1,11 +1,11 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-title class='ion-text-center ion-text-capitalize'>login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
-  <figure class="ion-text-center">
+  <figure>
     <ion-avatar class="center-avatar">
       <img src='../../assets/images/user.jpg' alt='logo' class='logo'>
     </ion-avatar>
@@ -15,7 +15,7 @@
       <ion-input label="Email" labelPlacement="floating" placeholder="Enter text" formControlName="email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input label="Password" labelPlacement="floating" placeholder="Enter text" formControlName="password"></ion-input>
+      <ion-input type="password" label="Password" labelPlacement="floating" placeholder="Enter text" formControlName="password"></ion-input>
     </ion-item>
     <div class="validation-message">
       <ng-container *ngFor="let validation of validation_messages.email">
@@ -26,12 +26,15 @@
       </ng-container>
     </div>
 
-    <ion-button type="submit" expand="block" shape="round" [disabled]="!loginForm.valid">Login</ion-button>
+    <ion-button color="tertiary" type="submit" expand="block" shape="round" [disabled]="!loginForm.valid">Login</ion-button>
   </form>
 
   <div class="validation-message">
-
     {{loginMessage}}
+  </div>
+
+  <div class="ion-text-center">
+    ¿Aún no tienes una cuenta? <a routerLink="/register">Regístrate aquí</a>
   </div>
   
 </ion-content>
