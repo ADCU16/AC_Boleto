@@ -107,4 +107,10 @@ export class RegisterPage implements OnInit {
       this.registerMessage = error;
     });
   }
+
+  goToLogin(){
+    this.navCtrl.navigateBack('/login');
+  }
+
+
 }

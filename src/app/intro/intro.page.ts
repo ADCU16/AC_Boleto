@@ -49,14 +49,14 @@ export class IntroPage {
   ]
 
   constructor(
-    private router: Router,
+    // private router: Router,
     private storage: Storage,
     private navCtrl: NavController
     ){}
 
   goToHome(){
     console.log("go to home");
-    this.navCtrl.navigateBack('/home');
+    this.navCtrl.navigateBack('menu/home');
   }
   
   ionViewWillEnter() {
