@@ -7,6 +7,8 @@ import * as dataEvents from "./events.json";
 export class EventsService {
 
   urlServer = "http://190.131.209.106";
+  //back url de categorias  Omar Vega
+  urlAnyCategory = "https://ticketsback-8b471a057f17.herokuapp.com";
 
   constructor() { }
 
@@ -20,6 +22,17 @@ export class EventsService {
     return dataEvents;
   }
 
+  getCategoryEvents() {
+    return fetch(`${this.urlServer}/categories`).then(
+      response => response.json()
+    );
+  }
+
+  getEventById(id: number) {
+    return fetch(`${this.urlServer}/categories/${id}`).then(
+      response => response.json()
+    );
+  }
   //obtener categorias "get hacia /categories
   // obtener 1 categoria "get hacia /categories/:id"
   //

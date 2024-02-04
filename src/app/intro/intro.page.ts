@@ -49,7 +49,7 @@ export class IntroPage {
   ]
 
   constructor(
-    // private router: Router,
+    private router: Router,
     private storage: Storage,
     private navCtrl: NavController
     ){}
@@ -58,8 +58,10 @@ export class IntroPage {
     console.log("go to home");
     this.navCtrl.navigateBack('menu/home');
   }
+
+ 
   
-  ionViewWillEnter() {
+  ionViewDidEnter() {
     console.log("Ya entraste a la intro");
     //Vamos a guardar ne le storage que ya pasamos por la intro
     this.storage.set('TheBox', true);

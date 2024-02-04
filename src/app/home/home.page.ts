@@ -10,6 +10,8 @@ import { EventsService } from '../services/events.service';
 export class HomePage {
 
   event_list : any; 
+  category_list : any;
+  category_element : any;
 
   constructor(
     private router: Router,
@@ -24,8 +26,22 @@ export class HomePage {
           console.log("Eventos del servidor",this.event_list)
         }
       )
+      this.eventsService.getCategoryEvents().then(
+        categories => {
+          this.category_list = categories;
+          console.log("Categorias del servidor",this.category_list)
+        }
+      )
+      this.eventsService.getEventById(1).then(
+        event => {
+          this.category_element = event;
+          console.log("Evento por id",event)
+        }
+      )
+      
       console.log("local events",this.eventsService.getLocalEvents().events)
     }
+
 
 
   goToIntro(){
